@@ -45,9 +45,9 @@ if (!WEBGL.isWebGLAvailable()) {
     //animate figure1
     function animate() {
         requestAnimationFrame(animate);
-        earth.rotation.x += 0.0002;
+        earth.rotation.x += 0.00001;
         earth.rotation.y += 0.005;
-        earth.rotation.z += 0.0002;
+        earth.rotation.z += 0.00001;
         controls.update();
         renderer.render(scene, camera);
     }
