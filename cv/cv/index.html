@@ -1,87 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="icon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="icon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<!--    styles-->
+    <!--    styles-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
 
     <title>Joren Fonteijn</title>
-  </head>
+</head>
 
-  <body>
-    <div id="app"></div>
-    <canvas id="background"></canvas>
+<body>
+<div id="app"></div>
+<canvas id="background"></canvas>
 
+<main>
     <header>
-      <h1>Joren Fonteijn</h1>
-      <h2>Welcome to my website!</h2>
+        <h1>Joren Fonteijn</h1>
+        <h2>Welcome to my website!</h2>
     </header>
 
     <section id="about">
-      <h2>About me:</h2>
-      <p>Hi, my name is Joren. I am an IT student living in Den Bosch, The Netherlands.</p>
+        <h2>About me:</h2>
+        <p>Hi, my name is Joren. I am an IT student living in Den Bosch, The Netherlands.</p>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: joren.fonteijn@gmail.com</li>
-        <li>Phone: 0618422771</li>
-      </ul>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/joren-fonteijn-146a66208/"><i></i></a></li>
-        <li></li>
-      </ul>
+        <h2>Contact</h2>
+        <ul>
+            <li>Email: joren.fonteijn@gmail.com</li>
+            <li>Phone: 0618422771</li>
+        </ul>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/joren-fonteijn-146a66208/"><i></i></a></li>
+            <li></li>
+        </ul>
     </section>
 
     <section id="education">
-      <h2>Educational history</h2>
-      <ul>
-        <li></li>
-      </ul>
+        <h2>Educational history</h2>
+        <ul>
+            <li>Avans University of Applied Sciences - <span>BASc, Software Engineering</span> 2019-2023</li>
+            <li>Graaf Huyn College - <span>High School Diploma HAVO, Nature and Health Profile</span> 2013-2018</li>
+        </ul>
     </section>
 
     <section id="experience">
-      <h2>Work history</h2>
-      <ul>
-        <li></li>
-      </ul>
+        <h2>Work history</h2>
+        <ul>
+            <li><span>Data Entry Employee</span> - <span>1KLICK, Amsterdam</span> from February 2019 - July 2019</li>
+            <li><span>Barman</span> - <span>De Chinese Muur, Beek</span> from February 2019 - May 2019</li>
+        </ul>
     </section>
 
     <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li><h3>Front-end</h3></li>
-        <li><h5>Languages:</h5></li>
-        <li>JavaScript</li>
-        <li>HTML & CSS</li>
-        <li><h5>Frameworks:</h5></li>
-        <li>Vue.js</li>
-        <li>Three.js</li>
-        <li><h3>Back-end</h3></li>
-        <li>Java</li>
-        <li>C#</li>
-        <li>Python</li>
-        <li>PHP</li>
-        <li>SQL</li>
-        <li><h5>Frameworks:</h5></li>
-        <li>Laravel</li>
-        <li>ASP.NET (CORE)</li>
-        <li>Flask</li>
-        <li><h3>Miscellaneous</h3></li>
-        <li>Communication</li>
-        <li>English and Dutch</li>
-        <li>Git</li>
-        <li>Scrum</li>
-        <li>Unity</li>
-        <li>UML</li>
-        <li>Excel</li>
-      </ul>
+        <h2>Skills</h2>
+        <div class="row-container">
+            <div id="frontend">
+                <h3>Front-end</h3>
+                <p>JavaScript</p>
+                <p>HTML</p>
+                <p>CSS</p>
+                <h4>Framework/tools:</h4>
+                <p>Vue.js</p>
+                <p>Three.js</p>
+            </div>
+            <div id="backend">
+                <h3>Back-end</h3>
+                <p>Java</p>
+                <p>C#</p>
+                <p>Python</p>
+                <p>PHP</p>
+                <p>SQL</p>
+                <h4>Framework/tools:</h4>
+                <p>Laravel</p>
+                <p>ASP.NET (CORE)</p>
+                <p>Flask</p>
+            </div>
+            <div id="misc">
+                <h3>Miscellaneous</h3>
+                <p>Communication</p>
+                <p>English and Dutch</p>
+                <p>Git</p>
+                <p>Scrum</p>
+                <p>Unity</p>
+                <p>Interaction Design</p>
+                <p>Kali Linux</p>
+                <p>UML</p>
+                <p>Excel</p>
+            </div>
+        </div>
     </section>
+</main>
 
-    <script type="module" src="/main.js"></script>
-  </body>
+<script type="module" src="/main.js"></script>
+</body>
 </html>

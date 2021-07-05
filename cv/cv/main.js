@@ -17,7 +17,7 @@ if (!WEBGL.isWebGLAvailable()) {
     })
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.setZ(30);
+    camera.position.setZ(0.01);
     scene.background = new THREE.TextureLoader().load('spacev2.png');
 
     //create scene elements
@@ -31,6 +31,8 @@ if (!WEBGL.isWebGLAvailable()) {
             normalTexture:normalTexture,
         })
     );
+    earth.position.z = -15;
+    earth.position.x = -8;
 
     const controls = new OrbitControls(camera, renderer.domElement);
 
@@ -42,7 +44,7 @@ if (!WEBGL.isWebGLAvailable()) {
     scene.add(light, earth);
     renderer.render(scene, camera);
 
-    //animate figure1
+    //animate scene
     function animate() {
         requestAnimationFrame(animate);
         earth.rotation.x += 0.00001;
@@ -53,24 +55,37 @@ if (!WEBGL.isWebGLAvailable()) {
     }
     animate();
 
-
+    //generate stars in random places
     function generatestars() {
-        const geom = new THREE.SphereGeometry(0.14, 24, 24);
-        const mat = new THREE.MeshStandardMaterial({color: 0xffffff});
+        const geom = new THREE.SphereGeometry(0.15, 24, 24);
+        let rnd = Math.floor(Math.random()*4);
+        let color;
+        if (rnd === 0 || 1) {
+            color = 0xfff4f3;
+        } else if (rnd === 2) {
+            color = 0xc7d8ff;
+        } else {
+            color = 0xffd9b2;
+        }
+        const mat = new THREE.MeshStandardMaterial({color: color});
         const star = new THREE.Mesh(geom, mat);
-
-        const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+        const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(175));
         star.position.set(x, y, z);
         scene.add(star);
     }
 
     Array(200).fill().forEach(generatestars);
 
-    // function movecamera() {
-    //     const top = document.body.getBoundingClientRect().top;
-    // }
-    //
-    // document.body.onscroll = movecamera;
+    function movecamera() {
+        let top = document.body.getBoundingClientRect().top;
+        top = top - 61;
+        earth.rotation.x += 0.000001
+        earth.rotation.y += 0.01
+        earth.rotation.z += 0.005
+        camera.position.z = top*-0.01;
+    }
+
+    document.body.onscroll = movecamera;
 }
 
 
