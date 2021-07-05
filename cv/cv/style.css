@@ -36,8 +36,8 @@ main {
 }
 
 main header {
-  grid-column: 6/10;
-  grid-row: 0/3;
+  grid-column: 3/10;
+  text-align: center;
 }
 
 section {
