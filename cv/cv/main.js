@@ -34,7 +34,7 @@ if (!WEBGL.isWebGLAvailable()) {
         })
     );
     earth.position.z = -15;
-    earth.position.x = -8;
+    earth.position.x = -10;
 
 
     //create venus
@@ -49,28 +49,39 @@ if (!WEBGL.isWebGLAvailable()) {
     venus.position.z = -40;
     venus.position.x = -2;
 
+    //create mercury
+    const mercuryTexture = new THREE.TextureLoader().load('mercurytexture.png');
+    const mercury = new THREE.Mesh(
+        new THREE.SphereGeometry(earthScale*0.38,64,64),
+        new THREE.MeshStandardMaterial({
+            map: mercuryTexture,
+            normalTexture:generalNormal,
+        })
+    );
+    mercury.position.z = -80;
+    mercury.position.x = 10;
+
     //create sun
     const sunTexture = new THREE.TextureLoader().load('suntexture.jpg');
     const sun = new THREE.Mesh(
-        new THREE.SphereGeometry(earthScale*108, 128, 128),
+        new THREE.SphereGeometry(earthScale*109, 128, 128),
         new THREE.MeshStandardMaterial({
             map: sunTexture,
             normalTexture: generalNormal,
         })
     );
-    sun.position.z = -1000;
-    sun.position.x = -20;
-
+    sun.position.z = -1250;
+    sun.position.x =400;
 
 
     const controls = new OrbitControls(camera, renderer.domElement);
 
     const light = new THREE.AmbientLight(0xffffff);
 
-    const gridhelper = new GridHelper(200, 50);
+    // const gridhelper = new GridHelper(200, 50);
 
     //add to scene
-    scene.add(light, earth, sun, venus);
+    scene.add(light, earth, sun, venus, mercury);
     renderer.render(scene, camera);
 
     //animate scene
@@ -84,7 +95,7 @@ if (!WEBGL.isWebGLAvailable()) {
 
     //generate stars in random places
     function generatestars() {
-        const geom = new THREE.SphereGeometry(0.15, 24, 24);
+        const geom = new THREE.SphereGeometry(0.2, 24, 24);
         let rnd = Math.floor(Math.random()*4);
         let color;
         if (rnd === 0 || 1) {
@@ -96,7 +107,7 @@ if (!WEBGL.isWebGLAvailable()) {
         }
         const mat = new THREE.MeshStandardMaterial({color: color});
         const star = new THREE.Mesh(geom, mat);
-        const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(300));
+        const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(450));
         star.position.set(x, y, z);
         scene.add(star);
     }
@@ -111,12 +122,12 @@ if (!WEBGL.isWebGLAvailable()) {
     }
 
     function rotatePlanetsCamera() {
-        earth.rotation.y += 0.01;
-        earth.rotation.z += 0.005;
-        sun.rotation.x += 0.0015;
-        sun.rotation.y += 0.0015;
-        venus.rotation.x += 0.0015;
-        venus.rotation.y += 0.0015;
+        earth.rotation.y += 0.02;
+        earth.rotation.z += 0.00001;
+        sun.rotation.x += 0.0003;
+        sun.rotation.y += 0.0003;
+        venus.rotation.y += 0.003;
+        mercury.rotation.y += 0.006;
     }
 
     function rotatePlanetsAnimation() {
@@ -124,8 +135,9 @@ if (!WEBGL.isWebGLAvailable()) {
         earth.rotation.z += 0.00001;
         sun.rotation.x += 0.0003;
         sun.rotation.y += 0.0003;
-        venus.rotation.x += 0.003;
         venus.rotation.y += 0.006;
+        mercury.rotation.y += 0.006;
+        mercury.rotation.x += 0.00002;
     }
 
     document.body.onscroll = movecamera;

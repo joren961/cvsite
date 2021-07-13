@@ -2,6 +2,9 @@
   --spacing : 500px;
   --border : 2px solid white;
   --border-radius : 20px;
+  --backgroundcolor1: rgba(0,0,0, 0.2);
+  --backgroundcolor2: rgba(0,0,0, 0.8);
+  --outline: -3px -3px 1 #000, 3px -3px 1 #000, -3px 3px 1 #000, 3px 3px 1 #000;
 }
 
 #app {
@@ -11,6 +14,7 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  text-shadow:var(--outline);
 }
 
 canvas {
@@ -38,16 +42,25 @@ main {
 main header {
   grid-column: 3/10;
   text-align: center;
+  background-color: var(--backgroundcolor1);
+  padding: 10px;
 }
 
 section {
   margin-bottom: var(--spacing);
+  background-color: var(--backgroundcolor2);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  border: var(--border);
 }
 span {
   font-weight: bolder;
 }
 #about {
   grid-column: 2/10;
+  background-color: var(--backgroundcolor1);
+  border: none;
+  border-radius: 10%;
 }
 #contact {
   grid-column: 9/12;
