@@ -1,6 +1,5 @@
 import './style.css'
-import * as THREE from 'three';
-import {GridHelper} from 'three';
+import * as THREE from 'three/build/three.module.js';
 import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 import {WEBGL} from "three/examples/jsm/WebGL";
 
