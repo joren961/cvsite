@@ -32,7 +32,6 @@ if (!WEBGL.isWebGLAvailable()) {
 
         const light = new THREE.AmbientLight(0xffffff);
         Array(200).fill().forEach(generatestars);
-        console.log(jupiterVar);
         scene.add(light, earthVar, sunVar, venusVar, mercuryVar, marsVar, jupiterVar);
         renderer.render(scene, camera);
 
@@ -157,7 +156,7 @@ if (!WEBGL.isWebGLAvailable()) {
         let top = document.body.getBoundingClientRect().top;
         top = top - 61;
         rotatePlanetsCamera();
-        camera.position.z = top*-0.01;
+        camera.position.z = top*-0.0065;
     }
 
     function rotatePlanetsCamera() {
