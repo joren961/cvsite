@@ -1,0 +1,102 @@
+:root {
+  --spacing : 500px;
+  --border : 2px solid white;
+  --border-radius : 20px;
+  --backgroundcolor1: rgba(0,0,0, 0.2);
+  --backgroundcolor2: rgba(0,0,0, 0.8);
+  --outline: -3px -3px 1 #000, 3px -3px 1 #000, -3px 3px 1 #000, 3px 3px 1 #000;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+  text-shadow:var(--outline);
+}
+
+canvas {
+  position: fixed;
+  top:0;
+  left:0;
+}
+
+h1 {
+  font-weight: bold;
+}
+h2 {
+  font-weight: bold;
+}
+
+main {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(11,1fr);
+  width: 98vw;
+  font-family: 'Space Mono', monospace;
+  color: white;
+}
+
+main header {
+  grid-column: 3/10;
+  text-align: center;
+  background-color: var(--backgroundcolor1);
+  padding: 10px;
+}
+
+section {
+  margin-bottom: var(--spacing);
+  background-color: var(--backgroundcolor2);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  border: var(--border);
+}
+span {
+  font-weight: bolder;
+}
+#about {
+    grid-column: 2/10;
+    background-color: var(--backgroundcolor2);
+    border-radius: var(--border-radius);
+    border: var(--border);
+}
+#contact {
+  grid-column: 9/12;
+}
+#education {
+  grid-column: 4/13;
+}
+#experience {
+  grid-column: 2/10;
+}
+#skills {
+  grid-column: 7/13;
+  text-align: center;
+}
+.row-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.row-container div {
+  margin: 0 20px 0 20px;
+  text-align: center;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row-container div h4 {
+  text-decoration: overline;
+}
+
+li {
+  list-style:none;
+}
