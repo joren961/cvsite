@@ -57,10 +57,10 @@ span {
   font-weight: bolder;
 }
 #about {
-  grid-column: 2/10;
-  background-color: var(--backgroundcolor1);
-  border: none;
-  border-radius: 10%;
+    grid-column: 2/10;
+    background-color: var(--backgroundcolor2);
+    border-radius: var(--border-radius);
+    border: var(--border);
 }
 #contact {
   grid-column: 9/12;
