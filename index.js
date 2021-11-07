@@ -4,8 +4,9 @@ const app = express();
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
 });
-let port_number = server.listen(process.env.PORT || 3000);
+let PORT = server.listen(process.env.PORT || '3000');
+app.set('port', PORT);
 
-app.listen(port_number,() => {
+app.listen(PORT,() => {
     console.log('server live');
 });
